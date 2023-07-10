@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    Calculator
+    <title>Calculator</title>
+    <style>
+      * { box-sizing: border-box }
+      #result{ 
+        width: 180px; height: 50px; margin: 5px; text-align: right 
+      }
+      #operator { 
+        width: 50px; height: 50px; margin: 5px; text-align: center 
+      }
+    button { width: 50px; height: 50px; margin: 5px }
+    </style>
+  </head>
+
+  <body>
+      <p>
+        <button onclick="
+          appendDigit(1)
+        ">1</button>
+
+        <button onclick="
+          appendDigit(2)
+        ">2</button>
+
+        <button onclick="
+          appendDigit(3)
+        ">3</button>
+          
+        <button onclick="
+          appendOperator ('+');
+        ">+</button>
+      </p>
+          
+      <p>
+        <button onclick="
+          appendDigit(4)
+        ">4</button>
+
+        <button onclick="
+          appendDigit(5)
+        ">5</button>
+
+        <button onclick="
+          appendDigit(6)
+        ">6</button>
+
+        <button onclick="
+          appendOperator ('-');
+        ">-</button>
+      </p>
+
+      <p>
+        <button onclick="
+          appendDigit(7)
+        ">7</button>
+  
+        <button onclick="
+          appendDigit(8)
+        ">8</button>
+  
+        <button onclick="
+          appendDigit(9)
+        ">9</button>
+  
+        <button onclick="
+          appendOperator ('*');
+        ">*</button>
+      </p>      
+      
+      <p>
+        <button onclick="
+          appendDigit(0)
+        ">0</button>
+  
+        <button onclick="
+          calculation += ('.');
+          console.log(calculation);
+        ">.</button>
+
+        <button onclick="
+          calculation = eval(calculation);
+          console.log(calculation);
+          calculation_end = true;
+        ">=</button>
+
+        <button onclick="
+          appendOperator ('/');
+        ">/</button>
+  
+      </p> 
+
+        <button onclick="
+          calculation = '';
+          console.log(calculation);
+        ">reset</button>
+
+  <script>
+    let calculation = '';
+    let calculation_end = false; /* 계산 완료 여부 */
+
+    function appendOperator(operator) {
+      calculation += operator;
+
+      console.log(calculation);
+    }
+
+    function appendDigit(digit) {
+      if (calculation_end === true){
+        calculation = digit;
+        calculation_end = false;
+      }
+      else{
+        calculation += digit;
+      }
+
+      console.log(calculation);
+    }
+
+  </script>
+
+    </body>
+</html>
